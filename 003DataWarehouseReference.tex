@@ -20,9 +20,9 @@ Now lets face the process needed to achieve that. The official term for that is 
 
 \subsection{Introducing the Reference Architecture}
 A system which used to be called Data Warehouse System should support and implement those steps in its software components. While developing such a DWS architectures, there leads no way around discussing the most commonly used reference explained by A. Bauer in his book 'Data Warehouse Systems'.\cite{dwsRefArchitecture}\newline
-\begin{figure}[htb!]
+\begin{figure}[htb]
     \centering
-    \includegraphics[scale=0.7]{pictures/DataWarehouseReferenceArchitecture.png}
+    \includegraphics[scale=0.57]{pictures/DataWarehouseReferenceArchitecture.png}
     \caption{Reference architecture for Data Warehouse Systems by A. Bauer \cite[p.~42]{dwsRefArchitecture}}
     \label{fig:referenceArchitecture}
 \end{figure} 
@@ -35,4 +35,5 @@ This step leads to the Core Data Warehouse which is basically a database contain
 The next part focuses upon the analytical-layer of the reference architecture. After loading the data from the core database into the derivation-database. This database is redundant to the core database but contains additional non-analysis-neutral derived data. Upon this database the data marts are build upon. Data Marts are just a slice of the whole amount of data. Additionally it is focused upon analysis and has therefore other data structures. In most use-cases multiple of those exist in order to have fast and detailed analysis of different areas inside the company.\newline
 \\
 On the right side of figure \ref{sec:referenceArchitecture} the management-layer is visualised. It contains components for managing the sequence- and data-flow and the metadata repository itself.\newline
-This should describe the fundamental ideas and concept of such a data warehouse system quite well without going into depths. If you want to get more know-how in this area feel free to do so, but it will not be covered in this article. 
+\\
+This should have described the fundamental ideas and concept of such a data warehouse system quite well without going into depths. The shown approach is closely related to Inmons hub and spoke architecture which will be introduced in the next section. If you want to get more know-how in this area feel free to do so, but it will not be covered in this article. 
