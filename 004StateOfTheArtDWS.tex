@@ -28,8 +28,16 @@ This section should have shown the various design possibilities of data marts in
 
 \subsection{Options regarding the persistent Data Handling}
 After having introduced various structural options above let us face the topic of data persistence in current Data Warehouse Systems.
-
+All layers inside the DWS can be created with virtual data or with its own data persistence. For instance it is possible to have a complete virtual DWS.\cite{sinz}\newline
+\\
+For now let us start off with the ETL-Layer. It is quite common to have a persistence inside the staging area which is often used as temporal data storage. Especially during the data transformation this can be quite beneficial. Besides of that it is possible to use an Operational-Data-Store (ODS) which was introduce by Inmon as ''An operational data store is a subject-oriented, integrated, volatile, current-valued, detailed-only collection of data in support of an organisations need for up-to-the-second, operational, integrated, collective information''\cite{buildingTheDWS} This storage uses the result of the data transformation and integration to publish it in such an ODS to have just in Real-Time-Data available in the DWS.\newline
+In concern of data historicization the persistence can be contained in the supply area (e.g. Data Marts) or the CDW which can be seen as component for historising the data. Depending on the technologies which are used (e.g. OLAP, ROLAP) there are multiple recommendations which get elaborated in Sinz's article upon the architecture for Data Warehouse Systems.
+\begin{itemize}
+    \item If a relational (SQL) interface is used it is sufficient to persist the data in the Core Data Warehouse.
+    \item While using multidimensional OLAP-tools it is common to store the information inside the supply area of the DWS.
+    \item In case of using relational OLAP it is common to have a relational persistence inside the data marts. It is not necessary to use a redundant data storage on the beneath but recommended due to a decoupling of the loading process. 
+\end{itemize}
 \cite{sinz}
-
-
+\\
+\\
 After the most commonly used architectures for Data Warehouse Systems have been outlined and the requirements regarding a DWS are pointed out, some newer technologies are introduced. In detail the fundamental ideas of micro-service and event-based architectures as well as Business Process Management will be elaborated. Further on these technologies will align in order to result into the final draft of the presented architecture.
