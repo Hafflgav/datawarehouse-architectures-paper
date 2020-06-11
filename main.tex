@@ -1,23 +1,36 @@
 %----------------------------------------------------------------------------------------
-%	Importe
+%	Imports
 %----------------------------------------------------------------------------------------
-\documentclass{article}
+\documentclass[11pt]{article}
 
-
-\usepackage{arxiv}
-
-\usepackage[utf8]{inputenc} % allow utf-8 input 
-\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-\usepackage{hyperref}       % hyperlinks
-\usepackage{url}            % simple URL typesetting
-\usepackage{booktabs}       % professional-quality tables
-\usepackage{amsfonts}       % blackboard math symbols
-\usepackage{nicefrac}       % compact symbols for 1/2, etc.
-\usepackage{microtype}      % microtypography
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}   
+\usepackage{hyperref}       
+\usepackage{url}           
+\usepackage{booktabs}       
+\usepackage{amsfonts}     
+\usepackage{nicefrac}   
+\usepackage{microtype}      
 \usepackage{lipsum}
 \usepackage{amsthm}
 \usepackage{graphicx}
+\usepackage{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{enumitem}
+\usepackage{scrpage2}
+\usepackage[section]{placeins}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{color}
 \newtheorem*{definition}{Definition}
+
+\geometry{a4paper, top=30mm, left=30mm, right=30mm, bottom=30mm}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 \begin{document}
     %------------------------------------------------------------------------------------
