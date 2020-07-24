@@ -43,6 +43,7 @@ Eberhard Wolff gives a quite good outlook about the adoption of this fundamental
 These fundamentals about micro services and self contained systems are quite important and will be mapped upon data warehouse architectures later on in chapter \ref{sec:finalArchitecture}.
 
 \subsection{Integrating an Event-Based Bus into the Micro-Service Landscape}
+\label{sec:eventBasedArchitecture}
 Making use of an event-driven choreographed architecture is the opposite of using a centralised orechestrator and therefore provides a loose coupling. The ''EventBus allows publish-subscribe-style communication between components without requiring the components to explicitly register with one another (and thus be aware of each other).'' \cite{EventBusExplained} \newline
 Another well known product which is often used in this context is Apache Kafka. It calls itself as ''distributed streaming platform'' having three key capabilities. First of all publishing and subscribing to streams, store streams as well as process streams.\cite{kafka}
 Next up we are using this technology as an example in order to elaborate upon the challenges of this approach.\newline
