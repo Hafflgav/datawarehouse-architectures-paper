@@ -24,6 +24,7 @@
 \usepackage{titlesec}
 \usepackage{listings}
 \usepackage{color}
+\usepackage[acronym]{glossaries}
 \newtheorem*{definition}{Definition}
 
 \geometry{a4paper, top=30mm, left=30mm, right=30mm, bottom=30mm}
@@ -31,6 +32,25 @@
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeglossaries
+\newacronym{dws}{DWS}{Data Warehouse System}
+\newacronym{scs}{SCS}{Self-Contained-System}
+\newacronym{bpm}{BPM}{Business Process Management}
+\newacronym{bpmn}{BPMN}{Business Process Management Notation}
+\newacronym{esb}{ESB}{Enterprise Service Bus}
+\newacronym{etl}{ETL}{Extract Transform Load}
+\newacronym{ods}{ODS}{Operational-Data-Store}
+\newacronym{cdw}{CDW}{Cora Data Warehouse}
+\newacronym{olap}{OLAP}{Online Analytical Processing}
+\newacronym{rolap}{ROLAP}{Relational online analytical processing}
+\newacronym{sql}{SQL}{Structured Query Language}
+\newacronym{soa}{SOA}{Service-Oriented-Architectures}
+\newacronym{ci/cd}{CI/CD}{Constant Iteration and Delivery}
+\newacronym{ui}{UI}{User Interface}
+\newacronym{sla}{SLA}{Service Level Agreement}
+\newacronym{omg}{OMG}{Object Management Group}
+\newacronym{rest}{REST}{Representational State Transfer}
 
 \begin{document}
     %------------------------------------------------------------------------------------
@@ -45,6 +65,7 @@
     \tableofcontents
     \newpage
     \listoffigures
+    \printglossary[type=\acronymtype]
     \newpage
     
     %------------------------------------------------------------------------------------

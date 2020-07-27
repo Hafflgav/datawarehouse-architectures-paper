@@ -1,7 +1,7 @@
 \section{Data Warehouse Reference-Architecture}
 \label{sec:referenceArchitecture}
 To order to have a common understanding about the topic of Data-Warehouse-Systems it is useful to quickly elaborate their fundamentals. Due to that the discussions and the considerations are easier to understand.\newline
-Therefore the term ''DWS'' will be defined and its responsibilities will be delimited. Afterwards an architecture will be introduced which will be taken as reference during this paper.
+Therefore the term ''\acrshort{dws}'' will be defined and its responsibilities will be delimited. Afterwards an architecture will be introduced which will be taken as reference during this paper.
 
 \subsection{Defining the Data-Warehouse-System}
 Before elaborating the reference architecture let's have a look upon the term 'Data Warehouse' itself and understand its process.\newline
@@ -29,7 +29,7 @@ A system which used to be called Data Warehouse System should support and implem
     \label{fig:referenceArchitecture}
 \end{figure} 
 
-Now lets quickly go through the pictured software components and databases from figure \ref{fig:referenceArchitecture} starting at the bottom within the Extract-Transform-Load(ETL)-Layer. In order to retrieve data from several source systems with distinct technologies, a more complex extraction component is needed. This can be triggered by a monitor which scans for data changes in those data sources.\newline
+Now lets quickly go through the pictured software components and databases from figure \ref{fig:referenceArchitecture} starting at the bottom within the \acrfull{etl} -Layer. In order to retrieve data from several source systems with distinct technologies, a more complex extraction component is needed. This can be triggered by a monitor which scans for data changes in those data sources.\newline
 After this step the whole data is loaded into a staging area in which a transformation happens. Two buzzwords in this context are data cleaning and cleansing. Therefore lets quickly elaborate the more complex data cleansing. 
 'Data cleansing it the act of correcting or moving inaccurate, broken, or erroneous data from your data-set.'\cite{dataCleansing}
 This step leads to the Core Data Warehouse which is basically a database containing all historic, cleaned, consolidated and analysis-neutral data samples. So concluded we can speak of an 'single source of truth'\cite{scriptRasch} which is a centralised and integrated database used as basis for further data handling and analysis.\newline
