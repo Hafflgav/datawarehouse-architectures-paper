@@ -46,11 +46,12 @@
 \newacronym{rolap}{ROLAP}{Relational online analytical processing}
 \newacronym{sql}{SQL}{Structured Query Language}
 \newacronym{soa}{SOA}{Service-Oriented-Architectures}
-\newacronym{ci/cd}{CI/CD}{Constant Iteration and Delivery}
+\newacronym{ci/cd}{CI/CD}{Constant Integration and Delivery}
 \newacronym{ui}{UI}{User Interface}
 \newacronym{sla}{SLA}{Service Level Agreement}
 \newacronym{omg}{OMG}{Object Management Group}
 \newacronym{rest}{REST}{Representational State Transfer}
+\newacronym{bi}{BI}{Business Intelligence}
 
 \begin{document}
     %------------------------------------------------------------------------------------
@@ -62,9 +63,13 @@
     %---------------------------------------------------------------------------------------
     %   Table of Contents & List of Figures
     %-------------------------------------------------------------------------------------
+    \addcontentsline{toc}{section}{Table of Contents}
     \tableofcontents
     \newpage
+    \addcontentsline{toc}{section}{List of Figures}
     \listoffigures
+    \newpage
+    \addcontentsline{toc}{section}{Acronyms}
     \printglossary[type=\acronymtype]
     \newpage
     
@@ -88,6 +93,12 @@
     %--------------------------------------------------------------------------------------
     %   Bibliography
     %-------------------------------------------------------------------------------------
+    \addcontentsline{toc}{section}{Bibliography}
     \bibliography{bibliography}
     \bibliographystyle{alphadin}
+    
+    %--------------------------------------------------------------------------------------
+    %   Declaration of Oath
+    %-------------------------------------------------------------------------------------
+    \include{009DeclarationOfOath}
 \end{document}

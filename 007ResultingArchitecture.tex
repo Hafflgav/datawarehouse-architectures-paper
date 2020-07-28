@@ -1,25 +1,25 @@
-\section{Combination into a process-driven semi-event-based Micro-service DWS}
+\section{Combination into a Process-Driven Semi-Event-Based Micro-service DWS}
 \label{sec:finalArchitecture}
-After having introduced all the basic technologies this section aims to combine those into the process-driven semi-event-bases microservice architecture for Data Warehouse Systems. The focus will lie upon the interaction between multiple components and is quite generic. There will not be any detailed choice of various processes or products. In order to verify its usability and feasibility an evaluation from industrial point of view will be appended. This will be achieved by interviewing a technical expert.
+After having introduced the basic technologies, this section aims to combine those into the process-driven semi-event-based microservice architecture for data warehouse systems. The focus will be generic and lie upon the interaction between multiple components. There will not be any detailed choice of various processes or products. In order to verify its usability and feasibility, an evaluation from industrial point of view will be appended. This will be achieved by interviewing a technical expert.
 
-\subsection{Introducing the Process-Driven Semi-Event-Based Microservice approach for Data Warehouse Systems}
+\subsection{Introducing the Process-Driven Semi-Event-Based Microservice Approach for Data Warehouse Systems}
 \begin{figure}[!htb]
     \centering
     \includegraphics[scale=0.43]{pictures/ResultingArchitecture.png}
-    \caption{Process-driven semi-event-bases microservice architecture for Data Warehouse Systems}
+    \caption{Process-driven semi-event-based microservice architecture for data warehouse systems}
     \label{fig:resultingArch}
 \end{figure}
-Figure \ref{fig:resultingArch} shows the resulting architecture. In the next section we will have a more detailed summary of the components and their interactions.\newline
+Figure \ref{fig:resultingArch} shows the resulting architecture. In the next paragraph we will have a more detailed summary of the components and their interactions.\newline
 \\
-Starting off with the Data Warehouse Manager, this component contains a BPMN workflow engine which is used for the orchestration of the whole system. Additionally all information of the process flow is stored and maintained within this component. \newline
-Next up lets focus upon the service cluster for data extraction. It contains microservices as SCS which are controlled via the data warehouse manager. As shown in the diagram, each service has its own database. Typically for the extraction layer the staging area is used as temporal data storage.  It can be thought to have distinct services depending upon the input format. Nevertheless there are multiple other possibilities about how to split up this component. As mentioned within chapter \ref{sec:techKnowHow} it is empathised to slice the services along the process which is defined within the BPMN diagram.\newline
-Besides of that the transformation services are orchestrated by the workflow engine as well. They get cascaded as needed within the BPMN diagrams. As shown in the cluster, data cleaning, cleansing and enhancement is provided. These self contained systems will hand over the data into a CDW component which stores the historical data.\newline
-In the cluster for analytical services there are multiple instances which are used to extract and store a subset of data within data marts. Due to the orchestration done by BPM it is possible to cascade multiple services in order to make department specific analysis possible. Furthermore the information will be shared via a message broker or event bus system with various consumer which are often represented by departments. As shown within the picture it would be possible to use a Grafana or Tableau instance in order to generate reports from those information.\newline
+Starting off with the data warehouse manager which contains a BPMN workflow engine used for the orchestration of the whole system. Additionally, all information of the process flow is stored and maintained within this component. \newline
+Next, let us focus upon the service cluster for data extraction. It contains microservices as SCS which are controlled via the data warehouse manager. As shown in the diagram, each service has its own database. Typically, in the extraction layer the staging area is used as temporary data storage.  It can be thought to have distinct services depending upon the input format. Nevertheless, there are multiple other possibilities about how to split up this component. As mentioned within chapter \ref{sec:techKnowHow} it is recommended to slice the services along the process which is defined within the BPMN diagram.\newline
+Besides of that, the transformation services are orchestrated by the workflow engine as well. They get cascaded as needed within the BPMN diagrams. As shown in the cluster, data cleaning, cleansing and enhancement is provided. These self contained systems will hand over the data into a CDW component which stores the historical data.\newline
+In the cluster for analytical services, there are multiple instances which are used to extract and store a subset of data within data marts. Due to the orchestration done by BPM, it is possible to cascade multiple services in order to make department specific analysis possible. Furthermore, the information will be shared via a message broker or event bus system with various consumers which are often run by departments. As shown within the picture, it would be possible to use \acrshort{bi} self-services like Grafana or Tableau in order to generate reports from that information.\newline
 \\
-In conclusion the key features are contained within die SCS approach to DWS, the process driven orchestration using a BPMN workflow engine as well as the data supply via an event bus / message broker. By making use of these principle the overall systems gets more adaptive in terms of customer needs. The overall development and dependency management gets easier as well as faster. 
+In conclusion, the key features are contained within the SCS approach to DWS, the process-driven orchestration using a BPMN workflow engine as well as the data supply via an event bus / message broker. By making use of these principles the overall systems get more adaptive in terms of customer needs. The overall development and dependency management gets easier and faster. 
 
 \subsection{Evaluation of this Architecture from an industrial Point of View}
-To verify feasibility, purpose and improvements of this approach to Data Warehouse Systems an interview is conducted. Before introducing the outcome guidelines and candidates need to be defined and chosen.
+To verify the feasibility, the purpose and the improvements of this approach in contrast to the presented ones in chapter \ref{sec:referenceArchitecture} and \ref{sec:otherArchitectures} an interview is conducted. Before introducing the outcome guidelines and candidates need to be defined and chosen.
 
 \subsubsection{Design of Guidelines for Interview}
 These guidelines aim to define questions which should be answered by consulted experts. The overall aim is to ensure the benefits of this approach as well as en-lighting some weaknesses. 
@@ -30,11 +30,11 @@ These guidelines aim to define questions which should be answered by consulted e
     \item What are possible weaknesses or bottlenecks within the introduced architecture?
 \end{itemize}
 
-\subsubsection{Selection of proper Candidates}
-In order to have a meaningful feedback, two candidates will be chosen. Due to the area of research it is obvious to select two software / system architects with good experience.\newline
+\subsubsection{Selection of Proper Candidates}
+In order to have meaningful feedback, two candidates will be chosen. Due to the area of research, it is an obvious choice to select two software / system architects with a lot of experience.\newline
 \\
-In terms of software architecture Dr. Dirk Nitsche is going to evaluate the resulting systems and the underlying architectural paradigms. He did his PhD in the area of database and knowledge systems at the technical university of Munich and is currently employed as a software architect at Siemens Mobility. Due to his knowledge in data driven applications and expertise in this area he was selected for this evaluation.\newline
-Dr. Hanno Walischewski is taking over from the systems point of view. He achieved his PhD in 1999 at the university of Freiburg concerning the learning and understanding structured documents. Afterwards he made his way into systems architecture and is currently Chief Architect for Intelligent Traffic Systems at Siemens Mobility. He has some great know-how in terms of microservices and their collaboration. Due to this he will analyse the orchestration of those services and their weaknesses.  
+In terms of software architecture, Dr. Dirk Nitsche is going to evaluate the resulting systems and the underlying architectural paradigms. He did his PhD in the area of database and knowledge systems at the Technical University of Munich and is currently employed as a software architect at Siemens Mobility. Due to his knowledge in data driven applications and expertise in this area, he was selected for this evaluation.\newline
+Dr. Hanno Walischewski is taking over from the systems point of view. He achieved his PhD in 1999 at the University of Freiburg concerning the learning and understanding of structured documents. Afterwards, he made his way into systems architecture and is currently Chief Architect for Intelligent Traffic Systems at Siemens Mobility. He has great know-how in terms of microservices and their collaboration. Due to this, he will analyse the orchestration of those services and their weaknesses.  
 
 \subsubsection{Resulting Feedback}
 \cite{dirk}
