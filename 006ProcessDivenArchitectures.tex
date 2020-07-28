@@ -6,7 +6,7 @@ First of all, the term BPM will be defined in regard to Data Warehouse Systems. 
 \subsection{Defining Business Process Management}
 ''\acrfull{bpm} is a systemic approach geared to capture, design, execute, document, measure, monitor and control automated as well as non-automated processes in order to meet the objectives that are aligned with the business strategy of a company.'' \cite{bpmDef} Another important aspect is BPM trying to focus on end-to-end processes. This means that processes are considered as whole without any separation into fragments. \cite{praxisBPM}\newline
 \\
-In order to provide uniform processes and make them generally interpretative ,the \acrfull{omg} defined the \acrfull{bpmn} standard which is currently in its second version. A positive aspect of this is that the standard isn't owned or controlled by any company and can be used for free in various tools. In contrast to workflow tools there won't be any problems by switching the BPM tooling due to this standardisation. \cite{bpmMethodStyle}
+In order to provide uniform processes and make them generally interpretative, the \acrfull{omg} defined the \acrfull{bpmn} standard which is currently in its second version. A positive aspect of this is that the standard isn't owned or controlled by any company and can be used for free in various tools. In contrast to workflow tools there won't be any problems by switching the BPM tooling due to this standardisation. \cite{bpmMethodStyle}
 
 \subsection{Applying BPM to the Data Warehousing Process}
 In this section, we consider the data warehousing process which was introduced in chapter \ref{sec:referenceArchitecture} as an end-to-end process. The corresponding BPMN model can be found in figure \ref{fig:BPMNdatawarehousing}.\newline
@@ -31,7 +31,7 @@ The three vertical lines beneath some of those tasks indicate that a multi-insta
 In the next chapter the introduced know-how concerning BPM will be used as a way to orchestrate microservices. This will result in the process driven architecture which will be crucial to the resulting DWS architecture.
 
 \subsection{Resulting Process-Driven Approach and its Advantages}
-Next up, it will be shown how BPM can be used to orchestrate microservices and especially self contained systems. The aim of this integration is to have a more adaptive microservice landscape, which can be used within our DWS. As the basis for our discussion we will make use of the challenges of event-based microservice choreography introduced in chapter \ref{sec:eventBasedArchitecture}.\newline
+Next up, it will be shown how BPM can be used to orchestrate microservices and especially self-contained systems. The aim of this integration is to have a more adaptive microservice landscape, which can be used within our DWS. As the basis for our discussion we will make use of the challenges of event-based microservice choreography introduced in chapter \ref{sec:eventBasedArchitecture}.\newline
 \\
 \\
 By choosing the approach that contains a workflow engine used for orchestrating REST calls by Bernd Rücker, it is possible to achieve the previously introduced goal. The workflow engine itself is used for running processes written in BPMN. Additional details about the corresponding implementation can be linked within this notation as well.\newline
@@ -47,9 +47,9 @@ To sum up the purpose of the workflow engine in this architecture Rücker states
 \\
 By having a look back on the challenges from the event-based bus architecture, we now analyse if this approach provides any benefits. 
 \begin{itemize}
-    \item ''Flow of events'': By having an orchestrated approach it is always defined how the events / tokens flow through the system. Additionally most of the engines provide historic information about all tokens which have travelled through the process. Due to this, the behaviour is always reproducible and compliant. 
-    \item ''Losing sight of flow'': Since the BPMN model guides through the flow and is well defined, this issue won't occur within this approach.
-    \item ''SLAs and resilience'': Since the engine's purpose is to act within a stateful resilience pattern, this challenge should have been solved as well. Nevertheless having the overall process contained in one service means that a single point of failure can exist. 
+    \item ''Flow of events'': By having an orchestrated approach it is always defined how the events / tokens flow through the system. Additionally, most of the engines provide historic information about all tokens which have travelled through the process. Due to this, the behaviour is always reproducible and compliant. 
+    \item ''Losing sight of flow'': Since the BPMN model guides through the flow and is well-defined, this issue won't occur within this approach.
+    \item ''SLAs and resilience'': Since the engine's purpose is to act within a stateful resilience pattern, this challenge should have been solved as well. Nevertheless, having the overall process contained in one service means that a single point of failure can exist. 
     \item ''Wired coupling'': If a new service will be added within the process, it will only affect its parent. By adding an ''Age Check'' to our order process all adaptions would be contained within the process definition of the ''Order'' parent service. No other services will be affected. Due to this wired coupling is rarer than within event-based systems. A negative is that a stateful \acrshort{rest} connection is chosen instead of an asynchronous possibility which is emphasised by the SCS's architectural approach. 
 \end{itemize}
 Overall, it can be seen that the usage of a process driven architecture in order to orchestrate microservices can be beneficial. This technique will further result in a concrete data warehouse architecture which will be introduced in the next chapter. 
