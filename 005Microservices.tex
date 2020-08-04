@@ -5,8 +5,8 @@ This section aims to broadly elaborate the nature of microservices. First, the t
 \subsection{Distinction Between SOA and Microservice Architectures}
 Microservice architecture is a commonly used buzzword for a modern way of implementing software. Looking into data from Google Trends, it is possible to see that the popularity of this approach has been increasing dramatically since 2014. \cite{microservices}\newline
 \\
-A monolithic application which grew over time often leads to poor maintainability and high complexity. To avoid this, the architecture needs to be de-serialised into multiple services, which results in a service oriented architecture (SOA). But due to current development it seems that SOA will be replaced by microservice architectures more often.\cite{mircorVSsoa}\newline
-Both of those methodologies suggest the decomposition of software. Therefore, SOA focuses upon integrating those services for the entire company within a centralised management and governance. Microservices instead focus on decomposing services without global governance. This results in higher autonomy and decoupling. \cite{mircorVSsoa} A communication over HTTP REST is chosen quite often.\newline
+A monolithic application which grew over time often leads to poor maintainability and high complexity. To avoid this, the architecture needs to be de-serialised into multiple services, which results in a service oriented architecture (SOA). But due to recent development it seems that SOA will be replaced by microservice architectures more often.\cite{mircorVSsoa}\newline
+Both of those methodologies suggest the decomposition of software. Therefore, SOA focuses upon integrating those services for the entire company within a centralised management and governance. Microservices instead focus on decomposing services without global governance. This results in higher autonomy and decoupling. \cite{mircorVSsoa} A communication over REST via HTTPS, RPC or CORBA is chosen quite often.\newline
 Furthermore, the coupling between the different services is considered to be low. This allows multiple development teams to work on distinct components without affecting each other. Overall it is possible to see that those teams are enabled to build and adapt components faster than with monolithic solutions. Additionally,  modern IT environments often use DevOps which can embrace their full potential of constant iteration and delivery (\acrshort{ci/cd}) within a microservice  world. \cite{redHatMicroservices}\newline
 \\
 Next to the benefits, there are also challenges to face while moving to a decomposed architecture. Brian Atkisson, a Senior Principal Systems Engineer at Red Hat, introduces eight of them. 
@@ -15,7 +15,7 @@ Next to the benefits, there are also challenges to face while moving to a decomp
     \item Testing - Integration testing is crucial and based on the dependencies. 
     \item Versioning - Each service has its own version as well as a collection of versions. The management of these collections gains complexity rapidly.
     \item Deploying - Strong automation is often necessary in order to be able to fulfil CI/CD requirements.
-    \item Logging - Without centralised logging, it extremely hard to figure out what is going on.
+    \item Logging - Without centralised logging, it is extremely hard to figure out what is going on.
     \item Monitoring - Handling of service data and distributed request tracing within a centralised dashboard.
     \item Debugging - It is hard to determine within which microservice  a problem is located without proper monitoring. Even good monitoring and logging is used more often than debugging.
     \item Connectivity - The services need to be connected to each other without any hard-coded information. This topic will be discussed when having a look at the event-based and process-driven approach. 

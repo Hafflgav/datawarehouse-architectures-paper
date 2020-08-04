@@ -12,7 +12,7 @@ After having explained the reference architecture from A. Bauer, which implement
     \caption{Distributed Data Warehousing Architecture by Ralph Kimball \cite{surveyDWSArchs}}
     \label{fig:distributedWarehouseArchitecture}
 \end{figure}
-\\In contrast to Inmon's approach, Kimball allows ''Everyone [...] to fabricate their database according to their requirements and department structures. All theixre independent repositories can be integrated as and when. [...]'' \cite{surveyDWSArchs}. Due to that the Central / core data warehouse results from those individual data mart and doesn't provide any consistency. This technique is also known as bottom-up approach for developing data warehouse Systems. Since the bus system is needed to ensure the interoperability between multiple data marts and the core data warehouse consistent data standards are therefore needed. Due to that, the design aspects are quite tough and the complexity is high. \cite{KimbalVSInmon}\newline
+\\In contrast to Inmon's approach, Kimball allows ''Everyone [...] to fabricate their database according to their requirements and department structures. All theixre independent repositories can be integrated as and when. [...]'' \cite{surveyDWSArchs}. Due to the fact that the Central / core data warehouse results from those individual data marts and doesn't provide any consistency. This technique is also known as bottom-up approach for developing data warehouse Systems. Since the bus system is needed to ensure the interoperability between multiple data marts and the core data warehouse consistent data standards are therefore needed. Hence, the design aspects are quite tough and the complexity is high. \cite{KimbalVSInmon}\newline
 As Breslin states, ''Kimball's approach is a departure from traditional database development'' \cite[p.~19]{KimbalVSInmon} and therefore targets the IT professional himself.\newline
 
 \subsection{Architectural Classification According to the Arrangement of Data Marts}
@@ -40,4 +40,4 @@ In concern of data historicisation, the persistence can be contained in the supp
 \cite{sinz}
 \\
 \\
-After the most commonly used architectures for data warehouse Systems have been outlined and the requirements regarding a DWS have been pointed out, newer technologies are introduced. In detail, the fundamental ideas of microservice and event-based architectures as well as Business Process Management will be elaborated. Further on these technologies will align in order to result in the final draft of the presented architecture.
+After the most commonly used architectures have been outlined and the requirements regarding a DWS have been pointed out, newer technologies are introduced. In detail, the fundamental ideas of microservice and event-based architectures as well as Business Process Management will be elaborated. Further on these technologies will align in order to result in the final draft of the presented architecture.
