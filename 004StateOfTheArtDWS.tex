@@ -30,6 +30,7 @@ This section should have shown the various design possibilities of data marts in
 After having introduced various structural options above, let us face the topic of data persistence in current data warehouse Systems.
 All layers inside the DWS can be created with virtual data or with their own data persistence. For instance, it is possible to have a complete virtual DWS. \cite{sinz}\newline
 \\
+\\
 For now, let us start off with the ETL layer. It is quite common to have persistence inside the staging area which is used as temporal data storage. Especially during the data transformation, this can be quite beneficial. Besides, it is possible to use an \acrfull{ods} which was introduced by Inmon as ''an operational data store is a subject-oriented, integrated, volatile, current-valued, detailed-only collection of data in support of an organisations need for up-to-the-second, operational, integrated, collective information'' \cite{buildingTheDWS} This storage uses the result of the data transformation and integration to publish it in such an ODS to have real-time-data available in the DWS.\newline
 In concern of data historicisation, the persistence can be contained in the supply area (e.g. data marts) or the CDW, which can be seen as a component for historising the data. Depending on the technologies which are used (e.g. \acrshort{olap} or \acrshort{rolap}), there are multiple recommendations which get elaborated in Sinz's article on the architecture for data warehouse Systems.
 \begin{itemize}

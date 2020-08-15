@@ -24,7 +24,7 @@ Now let's focus on the process needed to achieve this. The official term for tha
 A system which is called data warehouse system should support and implement these steps in its software components. While developing a DWS architecture, there leads no way around discussing the most commonly used reference by A. Bauer in his book ''Data Warehouse Systems''.\cite{dwsRefArchitecture}\newline
 \begin{figure}[htb]
     \centering
-    \includegraphics[scale=0.45]{pictures/DataWarehouseReferenceArchitecture.png}
+    \includegraphics[scale=0.5]{pictures/InmonHubSpoke.png}
     \caption{Reference architecture for data warehouse systems by A. Bauer \cite[p.~42]{dwsRefArchitecture}}
     \label{fig:referenceArchitecture}
 \end{figure} 
@@ -36,8 +36,8 @@ This step results in the Core data warehouse, which is basically a database cont
 \\
 The next part focuses on the analytical layer of the reference architecture. All data will be loaded from the core database into the derivation database. This database is redundant to the core database but contains additional non-analysis-neutral derived data. Upon this database the data marts are build. Data marts are a slice of the entire data. Additionally, it is focused on analysis and therefore has other data structures. In most use cases, multiple of these exist in order to have fast and detailed analysis of different areas inside a possible institution.\newline
 \\
-On the right side of figure \ref{sec:referenceArchitecture} the management layer is visualised. It contains components for managing the sequence- and data flow and the metadata repository itself. 
-% The metadata repository contains all the information regarding the state of the data warehouse. The managing component works with those in order to control the system.
+On the right side of figure \ref{sec:referenceArchitecture} the management layer is visualised. It contains components for managing the sequence- and data flow and the metadata repository itself. \newline
+The metadata repository contains all the information regarding the state of the data warehouse. The managing component works with those in order to control the system.
 \newline
 \\
 This should have described the fundamental ideas and concepts of a data warehouse system without going into depths. The shown approach is closely related to Inmon's hub and spoke architecture which will be introduced in the next section. 

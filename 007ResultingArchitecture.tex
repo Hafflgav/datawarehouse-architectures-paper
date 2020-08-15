@@ -34,8 +34,11 @@ These guidelines aim to define questions which should be answered by consulted e
 In order to have meaningful feedback, two candidates will be chosen. Due to the area of research, it is an obvious choice to select two software / system architects with a lot of experience.\newline
 \\
 In terms of software architecture, Dr. Dirk Nitsche is going to evaluate the resulting systems and the underlying architectural paradigms. He did his PhD in the area of database and knowledge systems at the Technical University of Munich and is currently employed as a software architect at Siemens Mobility. Due to his knowledge in data driven applications and expertise in this area, he was selected for this evaluation.\newline
-Dr. Hanno Walischewski is taking over from the systems point of view. He achieved his PhD in 1999 at the University of Freiburg concerning the learning and understanding of structured documents. Afterwards, he made his way into systems architecture and is currently Chief Architect for Intelligent Traffic Systems at Siemens Mobility. He has great know-how in terms of microservices and their collaboration. Due to this, he will analyse the orchestration of those services and their weaknesses.  
+Dr. Hanno Walischewski is taking over from the systems point of view. He achieved his PhD in 1999 at the University of Freiburg concerning the learning and understanding of structured documents. Afterwards, he made his way into systems architecture and is currently Chief Architect for Intelligent Traffic Systems at Siemens Mobility. He has great know-how in terms of microservices and their collaboration. Due to this, he will analyse the orchestration of those services and their weaknesses.
 
 \subsubsection{Resulting Feedback}
-\cite{dirk}
-\cite{hanno}
+\cite{dirk}\newline
+\\
+''This approach goes nicely the same way as may other architecture refactorings nowadays: splitting monoliths into a set of microservices. The classical way a data warehouse system was one big block that did all the work like a black box. Decoupling this into smaller pieces follows the learnings over the last years. Scalability can be realized in a much more detailed way depending on the use cases that shall be covered.\newline
+The microservice design results in simpler components, but lifts more complexity into the network and communication layer. Using a BPMN engine to orchestrate the involved components helps avoiding the implementation of complex pattern like saga (https://microservices.io/patterns/data/saga.html).\newline
+For future work it is definitely worth implementing a proof of concept to show the strength of  this approach. Due to the success of a lot of other migrations from monolithic to distributed architectures, it can be expected to be more flexible and performant.'' \cite{hanno}
