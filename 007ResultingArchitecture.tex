@@ -30,7 +30,8 @@ The technological freedom leads to the next topic of data persistence. As shown 
 \\
 \\
 In conclusion, the key features are contained within the SCS approach to DWS, the process-driven orchestration using a BPMN workflow engine as well as the data supply via an event bus / message broker. By making use of these principles the overall systems get more adaptive in terms of customer needs. The overall development and dependency management gets easier and faster. \newline
-But this approach will also provide some challenges as well. Data consistency, unnecessary effort, double work...
+But this approach also provides some challenges. One difficulty can be found within the data consistency that all analytical services need to provide. While the storage format can be distinct within each service the basis of data needs to be consistent. Otherwise it won't be possible to aggregate multiple reports into one. At worst multiple services would lead to distinct results which will cause a loss of trust. Due to this it is important keep this challenge in mind while implementing such a solution. \newline
+In order to keep track upon the services and their documentation I would empathise to have an overall system architect guiding the development of the overall data warehouse. Otherwise outdated documentation or miscommunication can lead to the development of multiple services with similar or even same purposes. 
 
 \subsection{Evaluation of this Architecture from an industrial Point of View}
 To verify the feasibility, the purpose and the improvements of this approach in contrast to the presented ones in chapter \ref{sec:referenceArchitecture} and \ref{sec:otherArchitectures} an interview is conducted. Before introducing the outcome guidelines and candidates need to be defined and chosen.
@@ -50,6 +51,7 @@ In order to have meaningful feedback, two candidates will be chosen. Due to the 
 In terms of software architecture, Dr. Dirk Nitsche is going to evaluate the resulting systems and the underlying architectural paradigms. He did his PhD in the area of database and knowledge systems at the Technical University of Munich and is currently employed as a software architect at Siemens Mobility. Due to his knowledge in data driven applications and expertise in this area, he was selected for this evaluation.\newline
 Dr. Hanno Walischewski is taking over from the systems point of view. He achieved his PhD in 1999 at the University of Freiburg concerning the learning and understanding of structured documents. Afterwards, he made his way into systems architecture and is currently Chief Architect for Intelligent Traffic Systems at Siemens Mobility. He has great know-how in terms of microservices and their collaboration. Due to this, he will analyse the orchestration of those services and their weaknesses.
 
+\newpage
 \subsubsection{Resulting Feedback}
 Hanno Walischewski provided a quote in which he focuses mainly on the transition to microservices:\newline
 ''This approach goes nicely the same way as may other architecture refactorings nowadays: splitting monoliths into a set of microservices. The classical way a data warehouse system was one big block that did all the work like a black box. Decoupling this into smaller pieces follows the learnings over the last years. Scalability can be realized in a much more detailed way depending on the use cases that shall be covered.\newline
